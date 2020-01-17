@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/livros', 'BooksController@index');
+Route::get('/livros/adicionar', 'BooksController@create');
