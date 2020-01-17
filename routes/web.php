@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/livros', 'BooksController@index');
-Route::get('/livros/adicionar', 'BooksController@create');
+Route::get('/livros', 'BooksController@index')->name('listar_series');
+Route::get('/livros/adicionar', 'BooksController@create')->name('form_criar_serie');
+Route::get('/livros/atualizar', 'BooksController@update');
+Route::get('/livros/ler', 'BooksController@read');
+Route::delete('/livros/{id}', 'BooksController@delete');
