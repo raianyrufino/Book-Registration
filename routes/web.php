@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/livros', 'BooksController@index')->name('listar_series');
-Route::get('/livros/adicionar', 'BooksController@create')->name('form_criar_serie');
-Route::get('/livros/atualizar', 'BooksController@update');
+Route::get('/livros', 'BooksController@index')->name('listar_livros');
+Route::get('/livros/form/{id?}', 'BooksController@create')->name('form_criar_livro');
+Route::post('/livros/adicionar', 'BooksController@store')->name('salvar_livro');
+Route::put('/livros/atualizar', 'BooksController@update');
 Route::get('/livros/ler', 'BooksController@read');
 Route::delete('/livros/{id}', 'BooksController@delete');
