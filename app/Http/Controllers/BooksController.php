@@ -33,7 +33,8 @@ class BooksController extends Controller{
         return redirect()->route('listar_livros');
     }
 
-    public function read(Livro $livro){
+    public function read($id){
+        $livro = Livro::findOrFail($id);
         return view('livros.read',compact('livro'));
     }
     

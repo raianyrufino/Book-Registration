@@ -14,6 +14,6 @@
 Route::get('/livros', 'BooksController@index')->name('listar_livros');
 Route::get('/livros/form/{id?}', 'BooksController@create')->name('form_criar_livro');
 Route::post('/livros/adicionar', 'BooksController@store')->name('salvar_livro');
-Route::put('/livros/atualizar', 'BooksController@update');
-Route::get('/livros/ler', 'BooksController@read');
-Route::delete('/livros/{id}', 'BooksController@delete');
+Route::put('/livros/atualizar', 'BooksController@update')->name('atualizar_livro');
+Route::get('/livros/ler/{id}', 'BooksController@read')->name('listar_livro');
+Route::delete('/livros/{id}', 'BooksController@delete')->name('deletar_livro');

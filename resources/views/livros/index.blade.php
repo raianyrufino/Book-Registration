@@ -21,15 +21,14 @@
               onsubmit="return confirm('Tem certeza que deseja remover {{ addslashes($livro->title) }}?')">
             @csrf
             @method('DELETE')
-            <button class="btn btn-danger"> delete
+            <button class="btn btn-danger"> Deletar
                 <i class="far fa-trash-alt"></i>
             </button>
         </form>
+        <a href="{{ route('form_criar_livro', $livro->id)  }}" class="btn btn-primary">Atualizar</a>
+        <a href="{{ route('listar_livro', $livro->id)  }}" class="btn btn-primary">Visualizar</a>
     </li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="{{ route('form_criar_livro', $livro->id)  }}" class="btn btn-dark mb-2">Atualizar</a>
-    </li>
     @endforeach
 </ul>
 @endsection
