@@ -16,7 +16,7 @@
 <ul class="list-group">
     @foreach($livros as $livro)
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{ $livro->title }}
+       <b> {{ $livro->title }} </b>
         <form method="post" action="/livros/{{ $livro->id }}"
               onsubmit="return confirm('Tem certeza que deseja remover {{ addslashes($livro->title) }}?')">
             @csrf
